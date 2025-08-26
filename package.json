@@ -1,10 +1,16 @@
 {
-  "name": "tv-garden-tizen",
+  "name": "@7han0s/tvgarden-tizen",
   "version": "1.0.0",
-  "description": "tv.garden client for Tizen TVs.",
+  "description": "A port of tv.garden PWA for Tizen TVs, designed for D-pad remote navigation.",
+  "author": "7han0s",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/7han0s/TV.Garden-Tizen.git"
+  },
   "main": "app/index.html",
   "packageType": "app",
-  "appName": "tv.garden",
+  "appName": "TV.Garden Tizen",
   "appPath": "app/index.html",
   "keys": [
     "ArrowUp",

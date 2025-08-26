@@ -8,5 +8,6 @@
     <access origin="*" subdomains="true"/>
     <name>tv.garden</name>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:profile name="tv-samsung"/>
 </widget>
