@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="org.example.tvgardentizen" version="1.0.0" viewmodes="fullscreen">
     <tizen:application id="org.example.tvgardentizen" package="tvgardentizen" required_version="2.3"/>
-    <content src="app/tizen-index.html"/>
+    <content src="app/index.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
     <icon src="icon.png"/>
     <access origin="https://raw.githubusercontent.com" subdomains="true"/>
