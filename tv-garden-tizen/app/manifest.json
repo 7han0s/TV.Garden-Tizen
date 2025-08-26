@@ -1,0 +1,73 @@
+{
+    "name": "tv.garden — Discover Live TV from Around the World",
+    "short_name": "tv.garden",
+    "description": "Watch Free Live TV from Around the World on tv.garden! Stream live news, sports, and entertainment—no subscription needed. Start watching now!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#202124",
+    "theme_color": "#202124",
+    "icons": [
+        {
+            "src": "assets/icons/apple-touch-icon-114x114.png",
+            "sizes": "114x114",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-120x120.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-57x57.png",
+            "sizes": "57x57",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-60x60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-72x72.png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon-76x76.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/app-icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "assets/icons/app-icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "assets/icons/maskable_icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "scope": "/",
+    "lang": "en-US"
+}

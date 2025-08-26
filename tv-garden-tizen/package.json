@@ -1,0 +1,17 @@
+{
+  "name": "tv-garden-tizen",
+  "version": "1.0.0",
+  "description": "tv.garden client for Tizen TVs.",
+  "main": "app/index.html",
+  "packageType": "app",
+  "appName": "tv.garden",
+  "appPath": "app/index.html",
+  "keys": [
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "Enter",
+    "Return"
+  ]
+}

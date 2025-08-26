@@ -1,0 +1,5 @@
+.focused {
+  outline: 3px solid #64D2FF !important; /* A bright blue outline, similar to the site's highlight color */
+  outline-offset: 2px;
+  box-shadow: 0 0 15px rgba(100, 210, 255, 0.8); /* A glowing effect to make it more visible on a TV */
+}
