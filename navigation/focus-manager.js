@@ -1,22 +1,11 @@
 const FocusManager = {
-  init: function(iframeDoc) {
-    // 1. Inject the CSS for the .focused class into the iframe
-    const style = iframeDoc.createElement('style');
-    style.textContent = `
-      .focused {
-        outline: 3px solid #64D2FF !important;
-        outline-offset: 3px;
-        box-shadow: 0 0 12px #64D2FF, 0 0 5px #fff;
-        border-radius: 5px;
-      }
-    `;
-    iframeDoc.head.appendChild(style);
-
-    // 2. Set initial focus on the first available element
-    this.setInitialFocus(iframeDoc);
+  init: function() {
+    // Set initial focus on the first available element.
+    // The stylesheet is now linked directly in index.html, so no injection is needed.
+    this.setInitialFocus();
   },
 
-  getAllFocusableElements: function(iframeDoc) {
+  getAllFocusableElements: function() {
     // Find all elements that are typically interactive.
     // Filter out those that are hidden or disabled.
     const selectors = [
@@ -27,30 +16,30 @@ const FocusManager = {
       'textarea:not([disabled])',
       '[tabindex]:not([tabindex="-1"])'
     ];
-    const elements = iframeDoc.querySelectorAll(selectors.join(', '));
+    const elements = document.querySelectorAll(selectors.join(', '));
     return Array.from(elements).filter(el => {
       return el.offsetParent !== null && window.getComputedStyle(el).visibility !== 'hidden';
     });
   },
 
-  setInitialFocus: function(iframeDoc) {
-    const focusable = this.getAllFocusableElements(iframeDoc);
+  setInitialFocus: function() {
+    const focusable = this.getAllFocusableElements();
     if (focusable.length > 0) {
       focusable[0].classList.add('focused');
       focusable[0].scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
     }
   },
 
-  clickFocusedElement: function(iframeDoc) {
-    const focusedElement = iframeDoc.querySelector('.focused');
+  clickFocusedElement: function() {
+    const focusedElement = document.querySelector('.focused');
     if (focusedElement) {
       focusedElement.click();
     }
   },
 
-  moveFocus: function(direction, iframeDoc) {
-    const focusable = this.getAllFocusableElements(iframeDoc);
-    let currentElement = iframeDoc.querySelector('.focused');
+  moveFocus: function(direction) {
+    const focusable = this.getAllFocusableElements();
+    let currentElement = document.querySelector('.focused');
 
     if (!currentElement && focusable.length > 0) {
         currentElement = focusable[0];
@@ -79,8 +68,11 @@ const FocusManager = {
       if (direction === 'right' && dx > 0) isCandidate = true;
 
       if (isCandidate) {
-        // Use Euclidean distance
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        // Use Euclidean distance, but heavily weight the primary axis of movement
+        const primaryDistance = (direction === 'up' || direction === 'down') ? Math.abs(dy) : Math.abs(dx);
+        const secondaryDistance = (direction === 'up' || direction === 'down') ? Math.abs(dx) : Math.abs(dy);
+        const distance = primaryDistance + secondaryDistance * 2; // Penalize off-axis movement
+
         if (distance < minDistance) {
           minDistance = distance;
           bestCandidate = el;
