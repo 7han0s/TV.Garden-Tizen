@@ -1,7 +1,7 @@
 {
   "name": "@7han0s/tvgarden-tizen",
   "version": "1.0.0",
-  "description": "A port of tv.garden PWA for Tizen TVs, designed for D-pad remote navigation.",
+  "description": "A port of tv.garden PWA for Tizen TVs with D-pad navigation support",
   "author": "7han0s",
   "license": "MIT",
   "repository": {
@@ -10,8 +10,14 @@
   },
   "main": "app/index.html",
   "packageType": "app",
-  "appName": "TV.Garden Tizen",
+  "appName": "TV.Garden",
   "appPath": "app/index.html",
+  "keywords": ["tv", "iptv", "tizen", "tizenbrew", "tv-app"],
+  "scripts": {
+    "build": "cp -r app/ dist/",
+    "watch": "nodemon --watch app --exec 'npm run build'",
+    "package": "npm run build && tizen package -t wgt -s developer ./dist"
+  },
   "keys": [
     "ArrowUp",
     "ArrowDown",
